@@ -3,7 +3,6 @@ package factories;
 import io.appium.java_client.android.AndroidDriver;
 
 public class driverManager {
-
     private static final driverManager instance = new driverManager();
 
     ThreadLocal<AndroidDriver> driver = new ThreadLocal<>();

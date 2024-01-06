@@ -25,8 +25,6 @@ public class mobileFactory {
         dc.setCapability("appPackage", "com.swaglabsmobileapp");
         dc.setCapability("appActivity", "com.swaglabsmobileapp.SplashActivity");
 
-
-
         if (platformType.equalsIgnoreCase("Emulator Android")) {
             dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
             dc.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 6");

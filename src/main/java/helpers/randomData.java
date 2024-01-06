@@ -7,7 +7,6 @@ import java.util.Locale;
 
 public class randomData {
     static Faker faker = new Faker(new Locale("ID"));
-
     public static String getFirstName() {
         return faker.name().firstName();
     }

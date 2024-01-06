@@ -4,4 +4,5 @@ public enum fileType {
     PNG,
     JPG,
     JPEG
+
 }
