@@ -1,5 +1,0 @@
-pages\LoginPage.class
-runners\testRunner.class
-pages\HomePage.class
-steps\commonStep.class
-steps\loginStep.class
