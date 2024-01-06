@@ -1,4 +1,4 @@
-package com.shidqiadiatma.helpers.enums;
+package helpers.enums;
 
 public enum fileType {
     PNG,

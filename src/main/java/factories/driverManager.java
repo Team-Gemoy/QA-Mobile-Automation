@@ -1,11 +1,6 @@
-package com.shidqiadiatma.factories;
+package factories;
 
 import io.appium.java_client.android.AndroidDriver;
-
-/**
- * @author Shidqi Adiatma a.k.a. hipstertester on 23/12/23
- * @project sauce-labs-mobile-selenium-cucumber
- */
 
 public class driverManager {
 

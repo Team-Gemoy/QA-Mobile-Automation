@@ -1,4 +1,4 @@
-package com.shidqiadiatma.factories;
+package factories;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AutomationName;
@@ -9,11 +9,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-/**
- * @author Shidqi Adiatma a.k.a. hipstertester on 23/12/23
- * @project sauce-labs-mobile-selenium-cucumber
- */
 
 public class mobileFactory {
 

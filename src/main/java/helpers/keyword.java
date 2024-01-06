@@ -1,8 +1,8 @@
-package com.shidqiadiatma.helpers;
+package helpers;
 
-import com.shidqiadiatma.helpers.enums.direction;
-import com.shidqiadiatma.factories.driverManager;
-import com.shidqiadiatma.helpers.enums.fileType;
+import helpers.enums.direction;
+import factories.driverManager;
+import helpers.enums.fileType;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.PointerInput;
@@ -16,11 +16,6 @@ import java.io.File;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
-
-/**
- * @author Shidqi Adiatma a.k.a. hipstertester on 23/12/23
- * @project sauce-labs-mobile-selenium-cucumber
- */
 
 public class keyword {
 
