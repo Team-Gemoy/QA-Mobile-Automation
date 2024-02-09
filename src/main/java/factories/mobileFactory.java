@@ -22,8 +22,8 @@ public class mobileFactory {
         dc.setCapability(MobileCapabilityType.APP, pathApk);
         dc.setCapability(MobileCapabilityType.NO_RESET, false);
         dc.setCapability(MobileCapabilityType.TIMEOUTS, 10000);
-        dc.setCapability("appPackage", "com.swaglabsmobileapp");
-        dc.setCapability("appActivity", "com.swaglabsmobileapp.SplashActivity");
+        dc.setCapability("appPackage", "com.synrgy.wefly");
+        dc.setCapability("appActivity", "com.synrgy.wefly.MainActivity");
 
         if (platformType.equalsIgnoreCase("Emulator Android")) {
             dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");

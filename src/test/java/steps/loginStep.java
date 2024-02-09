@@ -1,52 +1,47 @@
 package steps;
 
 import factories.driverManager;
-import io.appium.java_client.android.AndroidDriver;
+import helpers.keyword;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.AccountPage;
 import pages.HomePage;
 import pages.LoginPage;
 
 public class loginStep {
 
-    private final LoginPage loginPage;
-    private final HomePage homePage;
-
-    public loginStep() {
-        AndroidDriver androidDriver = driverManager.getInstance().getDriver();
-        loginPage = new LoginPage(androidDriver);
-        homePage = new HomePage(androidDriver);
+    private LoginPage getLoginPage() {
+        return new LoginPage(driverManager.getInstance().getDriver());
+    }
+    private HomePage getHomePage() {
+        return new HomePage(driverManager.getInstance().getDriver());
+    }
+    private AccountPage getAccountPage() {
+        return new AccountPage(driverManager.getInstance().getDriver());
     }
 
-    @When("user login using {string}")
-    public void loginAs(String credentialType) {
-        String username;
-        String password;
 
-        switch (credentialType) {
-            case "standard_user" -> {
-                username = "standard_user";
-                password = "secret_sauce";
-            }
-            case "locked_out_user" -> {
-                username = "locked_out_user";
-                password = "secret_sauce";
-            }
-            default -> throw new RuntimeException("Credential type doesn't exist");
-        }
-
-        loginPage.doLogin(username, password);
-        loginPage.tapLoginButton();
+    @When("user input valid email")
+    public void inputEmail() {
+        getLoginPage().inputEmail("miyali4273@bitofee.com");
     }
 
-    @Then("user direct to dashboard screen")
-    public void userDirectToDashboardScreen() {
-        homePage.verify_Component_OnHomePage("PRODUCTS");
+    @And("user input correct password")
+    public void inputPassword() {
+        getLoginPage().inputPassword("P@ssw0rd123");
     }
 
-    @Then("user verify snackbar error with value {string} exists")
-    public void userVerifySnackbarError(String value) {
-        loginPage.verifySnackbarErrorExist(value);
+    @Then("user click Login button")
+    public void clickLoginButton() {
+        getLoginPage().clickLoginButton();
+        keyword.waitFor(2);
+    }
+
+    @Then("user login successfully")
+    public void userLoginSuccessfully() {
+        getHomePage().clickAccountButton();
+        getAccountPage().verifyLoginSuccessfully();
     }
 
 }

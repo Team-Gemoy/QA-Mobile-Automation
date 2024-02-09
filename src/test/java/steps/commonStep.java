@@ -1,35 +1,36 @@
 package steps;
 
-import io.appium.java_client.android.AndroidDriver;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import factories.driverManager;
 import helpers.keyword;
-import pages.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import pages.AccountPage;
+import pages.HomePage;
+import pages.LoginPage;
 
 
 public class commonStep {
-
-    private final LoginPage loginPage;
-    private final HomePage homePage;
-
-    public commonStep() {
-        AndroidDriver androidDriver = driverManager.getInstance().getDriver();
-        loginPage = new LoginPage(androidDriver);
-        homePage = new HomePage(androidDriver);
+    private LoginPage getLoginPage() {
+        return new LoginPage(driverManager.getInstance().getDriver());
+    }
+    private HomePage getHomePage() {
+        return new HomePage(driverManager.getInstance().getDriver());
+    }
+    private AccountPage getAccountPage() {
+        return new AccountPage(driverManager.getInstance().getDriver());
     }
 
-    @Given("user is already on home page")
-    public void userIsAlreadyOnHomePage() {
-        loginPage.verifyComponentsOnLoginPage();
-        loginPage.doLogin("standard_user", "secret_sauce");
-        loginPage.tapLoginButton();
-        homePage.verify_Component_OnHomePage("PRODUCTS");
-    }
 
-    @Given("user open SwagLabs app")
+    @Given("user open WeFly app")
     public void userOpenSwagLabsApp() {
-        loginPage.verifyComponentsOnLoginPage();
+        getHomePage().verifySearchButtonExist();
+        keyword.waitFor(3);
+    }
+
+    @And("user navigate to Login page")
+    public void navigateToLoginPage() {
+        getHomePage().clickAccountButton();
+        keyword.waitFor(1);
     }
 
     @And("user take screenshot {string}")

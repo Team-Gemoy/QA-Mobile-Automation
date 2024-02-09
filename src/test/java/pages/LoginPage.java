@@ -5,7 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+
 import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
@@ -15,46 +15,45 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//android.widget.EditText[@content-desc='test-Username']")
-    private WebElement inputUsername;
+    @FindBy(id = "com.synrgy.wefly:id/et_email")
+    private static WebElement input_email;
 
-    @FindBy(xpath = "//android.widget.EditText[@content-desc='test-Password']")
-    private WebElement inputPassword;
+    @FindBy(id = "com.synrgy.wefly:id/et_password")
+    private static WebElement input_password;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc='test-LOGIN']")
-    private WebElement loginButton;
+    @FindBy(id = "com.synrgy.wefly:id/btn_login")
+    private static WebElement loginButton;
 
-    @FindBy(xpath = "//android.widget.ScrollView[@content-desc='test-Login']/android.view.ViewGroup/android.widget.ImageView[1]")
-    private WebElement swaglabsLogo;
+    @FindBy(id = "com.synrgy.wefly:id/tv_register")
+    private static WebElement signUpButton;
 
-    @FindBy(xpath = "//android.widget.ScrollView[@content-desc='test-Login']/android.view.ViewGroup/android.widget.ImageView[2]")
-    private WebElement swaglabsImage;
+    @FindBy(id = "com.synrgy.wefly:id/tv_forgot_pass")
+    private static WebElement forgotPasswordButton;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc='test-Error message']/android.widget.TextView")
-    private WebElement snackbarError;
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.TextView[1]")
+    private static WebElement titleLoginPage;
 
-    public void verifyComponentsOnLoginPage() {
-        keyword.verifyElementExist(swaglabsLogo);
-        keyword.verifyElementExist(inputUsername);
-        keyword.verifyElementExist(inputPassword);
-        keyword.verifyElementExist(loginButton);
-        keyword.verifyElementExist(swaglabsImage);
-        keyword.waitFor(2);
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.ImageView")
+    private static WebElement weFlyIcon;
+
+    public void inputEmail(String email) {
+        keyword.inputText(input_email, email);
     }
 
-    public void doLogin(String username, String password) {
-        keyword.inputText(inputUsername, username);
-        keyword.inputText(inputPassword, password);
+    public void inputPassword(String password) {
+        keyword.inputText(input_password, password);
     }
 
-    public void tapLoginButton() {
+    public void clickLoginButton() {
         keyword.tapElement(loginButton);
-        keyword.waitFor(2);
     }
 
-    public void verifySnackbarErrorExist(String expectedMessage) {
-        String actual = snackbarError.getText();
-        Assert.assertEquals(actual, expectedMessage);
+    public void clickLinkTextSignUp() {
+        keyword.tapElement(signUpButton);
+    }
+
+    public void clickLinkTextForgotPassword() {
+        keyword.tapElement(forgotPasswordButton);
     }
 
 }
