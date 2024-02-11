@@ -10,3 +10,5 @@ Feature: Login
     * user click Login button
     Then user login successfully
     * user take screenshot "user-login-successfully"
+    When user click Logout button
+    Then user logout successfully

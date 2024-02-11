@@ -23,4 +23,8 @@ public class AccountPage {
     public void verifyLoginSuccessfully() {
         keyword.verifyElementExist(logoutButton);
     }
+
+    public void clickLogout() {
+        keyword.tapElement(logoutButton);
+    }
 }

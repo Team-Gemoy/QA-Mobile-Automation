@@ -44,4 +44,14 @@ public class loginStep {
         getAccountPage().verifyLoginSuccessfully();
     }
 
+    @When("user click Logout button")
+    public void userClickLogoutButton() {
+        getAccountPage().clickLogout();
+    }
+
+    @Then("user logout successfully")
+    public void logoutSuccessfully() {
+        getLoginPage().verifyComponentLoginPage();
+    }
+
 }

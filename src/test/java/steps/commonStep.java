@@ -30,6 +30,7 @@ public class commonStep {
     @And("user navigate to Login page")
     public void navigateToLoginPage() {
         getHomePage().clickAccountButton();
+        getLoginPage().verifyComponentLoginPage();
         keyword.waitFor(1);
     }
 

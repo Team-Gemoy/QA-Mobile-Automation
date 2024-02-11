@@ -56,4 +56,10 @@ public class LoginPage {
         keyword.tapElement(forgotPasswordButton);
     }
 
+    public void verifyComponentLoginPage() {
+        keyword.verifyElementExist(weFlyIcon);
+        keyword.verifyElementExist(titleLoginPage);
+        keyword.verifyElementExist(loginButton);
+    }
+
 }
