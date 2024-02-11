@@ -10,12 +10,12 @@ public class randomData {
     public static String getFirstName() {
         return faker.name().firstName();
     }
-    public static String getLastName() {
-        return faker.name().lastName();
+    public static String getFullname() {return faker.name().fullName();
     }
-    public static String getPostalCode() {
-        return faker.address().zipCode();
+    public static String getEmail() {
+        return faker.internet().emailAddress();
     }
+
 
     public static boolean isPriceSorted(List<WebElement> itemPrices) {
         for (int i = 0; i < itemPrices.size() - 1; i++) {

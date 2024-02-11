@@ -62,4 +62,9 @@ public class LoginPage {
         keyword.verifyElementExist(loginButton);
     }
 
+    public void clickSignUp() {
+        keyword.tapElement(signUpButton);
+        keyword.waitFor(1);
+    }
+
 }
