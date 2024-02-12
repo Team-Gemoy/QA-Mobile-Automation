@@ -1,6 +1,5 @@
 package pages;
 
-import helpers.enums.direction;
 import helpers.keyword;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
@@ -60,8 +59,7 @@ public class listFlightPage {
     }
 
     public void tapContinueOrderButton() {
-        keyword.swipe(direction.UP);
-        keyword.waitFor(2);
+        keyword.waitFor(3);
         keyword.tapElement(continueOrderButton);
         keyword.waitFor(1);
     }
