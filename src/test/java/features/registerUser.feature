@@ -1,7 +1,7 @@
 @register
 Feature: Register
 
-  @login
+  @register
   Scenario: As a user, I should be able to register with fill in all required data
     Given user open WeFly app
     * user navigate to Register page

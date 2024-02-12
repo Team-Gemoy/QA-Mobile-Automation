@@ -12,7 +12,7 @@ import java.net.MalformedURLException;
 @CucumberOptions(
         features = "src/test/java/features",
         glue = "steps",
-        tags = "@register",
+        tags = "@updateProfile",
         plugin = {
                 "pretty",
                 "html:reports/cucumber-result/cucumber-reports.html",

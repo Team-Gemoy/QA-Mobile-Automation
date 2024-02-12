@@ -21,6 +21,17 @@ public class commonStep {
     }
 
 
+    @And("user is already logged in")
+    public void alreadyLogin() {
+        getHomePage().clickAccountButton();
+        getLoginPage().verifyComponentLoginPage();
+        keyword.waitFor(1);
+        getLoginPage().inputEmail("miyali4273@bitofee.com");
+        getLoginPage().inputPassword("P@ssw0rd123");
+        getLoginPage().clickLoginButton();
+        keyword.waitFor(2);
+
+    }
     @Given("user open WeFly app")
     public void userOpenSwagLabsApp() {
         getHomePage().verifySearchButtonExist();
