@@ -9,3 +9,4 @@ Feature: Update Profile
     When user edits data on the edit profile page
     * user click Done button
     Then user successfully updates profile
+    * user take screenshot "update-profile-successfully"
