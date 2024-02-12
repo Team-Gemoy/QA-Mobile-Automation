@@ -24,6 +24,9 @@ public class HomePage {
     @FindBy(id = "com.synrgy.wefly:id/btn_search_flight")
     private static WebElement searchFlightButton;
 
+    @FindBy(id = "com.synrgy.wefly:id/et_date_departure")
+    private static WebElement departureDate;
+
 
     public void clickAccountButton() {
         keyword.tapElement(accountButton);
@@ -32,6 +35,16 @@ public class HomePage {
 
     public void verifySearchButtonExist() {
         keyword.verifyElementExist(searchFlightButton);
+        keyword.waitFor(2);
+    }
+
+    public void clickSearch() {
+        keyword.tapElement(searchFlightButton);
+        keyword.waitFor(2);
+    }
+
+    public void inputDepartureDate(String date) {
+        keyword.inputText(departureDate, date);
     }
 
 }

@@ -54,6 +54,7 @@ public class LoginPage {
 
     public void clickLinkTextForgotPassword() {
         keyword.tapElement(forgotPasswordButton);
+        keyword.waitFor(2);
     }
 
     public void verifyComponentLoginPage() {

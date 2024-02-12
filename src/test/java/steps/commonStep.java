@@ -23,6 +23,7 @@ public class commonStep {
 
     @And("user is already logged in")
     public void alreadyLogin() {
+        keyword.waitFor(2);
         getHomePage().clickAccountButton();
         getLoginPage().verifyComponentLoginPage();
         keyword.waitFor(1);

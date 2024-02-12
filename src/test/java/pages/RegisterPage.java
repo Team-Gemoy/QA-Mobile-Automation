@@ -55,5 +55,6 @@ public class RegisterPage {
     public void verifyComponentOnRegisterPage() {
         keyword.verifyWordingOnElement(titleregisterPage, "Register Now !");
         keyword.verifyElementExist(signUpButton);
+        keyword.waitFor(2);
     }
 }

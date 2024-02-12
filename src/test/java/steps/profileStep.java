@@ -7,14 +7,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AccountPage;
 import pages.HomePage;
-import pages.LoginPage;
 import pages.ProfilePage;
 
 public class profileStep {
 
-    private LoginPage getLoginPage() {
-        return new LoginPage(driverManager.getInstance().getDriver());
-    }
     private HomePage getHomePage() {
         return new HomePage(driverManager.getInstance().getDriver());
     }
