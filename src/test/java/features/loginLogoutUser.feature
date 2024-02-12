@@ -1,7 +1,7 @@
-@login
-Feature: Login
+@loginLogout
+Feature: Login User
 
-  @login
+  @loginLogout
   Scenario: As a user, I should be able to log in using correct registered data on WeFly
     Given user open WeFly app
     * user navigate to Login page

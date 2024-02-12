@@ -29,7 +29,7 @@ public class commonStep {
         getLoginPage().inputEmail("miyali4273@bitofee.com");
         getLoginPage().inputPassword("P@ssw0rd123");
         getLoginPage().clickLoginButton();
-        keyword.waitFor(2);
+        keyword.waitFor(3);
 
     }
     @Given("user open WeFly app")

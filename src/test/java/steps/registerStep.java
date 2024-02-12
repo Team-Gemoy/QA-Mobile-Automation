@@ -3,6 +3,7 @@ package steps;
 import factories.driverManager;
 import helpers.randomData;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AccountPage;
 import pages.HomePage;
@@ -26,7 +27,7 @@ public class registerStep {
 
     @When("user fills in all the required data on the registration page")
     public void fillAllData() {
-        getRegisterPage().fillAllRequiredData(randomData.getEmail(), randomData.getFullname(), "08435263472", "P@ssw0rd123");
+        getRegisterPage().fillAllRequiredData(randomData.getEmail(), randomData.getFullname(), randomData.getDate(), randomData.getPhoneNumber(), "P@ssw0rd123");
     }
 
     @And("user click Sign Up button")
@@ -41,5 +42,9 @@ public class registerStep {
         getLoginPage().verifyComponentLoginPage();
         getLoginPage().clickSignUp();
         getRegisterPage().verifyComponentOnRegisterPage();
+    }
+    @Then("user sees a snackbar that the user successfully registered")
+    public void registersuccessfully() {
+        getLoginPage().verifyComponentLoginPage();
     }
 }

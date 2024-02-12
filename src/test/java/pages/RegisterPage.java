@@ -39,12 +39,10 @@ public class RegisterPage {
     @FindBy(id = "android:id/button1")
     private static WebElement OKbuttonOnCalender;
 
-    public void fillAllRequiredData(String email, String fullname, String phonenumber, String password) {
+    public void fillAllRequiredData(String email, String fullname,String date, String phonenumber, String password) {
         keyword.inputText(inputEmail, email);
         keyword.inputText(inputFullname, fullname);
-        keyword.tapElement(inputDateOfBirth);
-        keyword.tapElement(OKbuttonOnCalender);
-        keyword.waitFor(1);
+        keyword.inputText(inputDateOfBirth, date);
         keyword.inputText(inputPhoneNumber, phonenumber);
         keyword.inputText(inputPassword, password);
     }

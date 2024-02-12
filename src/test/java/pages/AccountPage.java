@@ -38,6 +38,7 @@ public class AccountPage {
 
     public void clickEdit() {
         keyword.tapElement(editButton);
+        keyword.waitFor(1);
     }
 
 

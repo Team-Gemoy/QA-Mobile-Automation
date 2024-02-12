@@ -27,7 +27,7 @@ public class HomePage {
 
     public void clickAccountButton() {
         keyword.tapElement(accountButton);
-        keyword.waitFor(3);
+        keyword.waitFor(2);
     }
 
     public void verifySearchButtonExist() {
