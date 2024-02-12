@@ -15,7 +15,7 @@ public class mobileFactory {
     public AndroidDriver launchMobile(String platformType) throws MalformedURLException {
         DesiredCapabilities dc = new DesiredCapabilities();
         URL url = new URL("http://localhost:4723/wd/hub");
-        String pathApk = System.getProperty("user.dir") + File.separator + "src/main/resources/build/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk";
+        String pathApk = System.getProperty("user.dir") + File.separator + "src/main/resources/build/app-debug.apk";
 
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
         dc.setCapability(CapabilityType.PLATFORM_NAME, Platform.ANDROID.toString());
