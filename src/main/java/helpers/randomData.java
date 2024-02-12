@@ -1,9 +1,12 @@
 package helpers;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.WebElement;
+
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 public class randomData {
     static Faker faker = new Faker(new Locale("ID"));
@@ -12,25 +15,26 @@ public class randomData {
     }
     public static String getFullname() {return faker.name().fullName();
     }
+    public static String getDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        return sdf.format(faker.date().birthday());
+    }
     public static String getEmail() {
         return faker.internet().emailAddress();
     }
 
-
-    public static boolean isPriceSorted(List<WebElement> itemPrices) {
-        for (int i = 0; i < itemPrices.size() - 1; i++) {
-            double value1 = extractNumericValue(itemPrices.get(i));
-            double value2 = extractNumericValue(itemPrices.get(i + 1));
-
-            if (value1 < value2) {
-                return false;
-            }
-        }
-        return true;
+    public static String getCity() {
+        return faker.address().cityName();
     }
 
-    private static double extractNumericValue(WebElement element) {
-        String priceText = element.getText().replace("$", "");
-        return Double.parseDouble(priceText);
+    public static String getPhoneNumber() {
+        return "08" + faker.numerify("##########");
     }
+
+    static List<String> indexList = Arrays.asList("Male", "Female");
+    static Random random = new Random();
+    public static String getGender() {
+        return indexList.get(random.nextInt(indexList.size()));
+    }
+
 }
